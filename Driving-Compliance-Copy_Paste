@@ -1,0 +1,18 @@
+## inspec.yml
+
+depends:
+  - name: linux-baseline
+    url: https://github.com/dev-sec/linux-baseline/archive/master.tar.gz
+
+
+## Example.rb
+
+# copyright: 2018, The Authors
+
+require_controls 'linux-baseline' do
+  control 'package-02'
+  control 'os-05'
+  control 'os-01'
+end
+
+
