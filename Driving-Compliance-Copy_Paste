@@ -15,4 +15,6 @@ require_controls 'linux-baseline' do
   control 'os-01'
 end
 
+# Upload to Automate
 
+inspec compliance login https://nyc-wsdf1.chef-demo.com --user=YOUR-USER --token=dy7Odby0wMvDY8AyUdMlIfxqriI=
