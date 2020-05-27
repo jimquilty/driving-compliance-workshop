@@ -3,8 +3,8 @@
 depends:
   - name: linux-baseline
     url: https://github.com/dev-sec/linux-baseline/archive/master.tar.gz
-
-
+    
+-------------------------------------------------------------------------------------
 ## Example.rb
 
 # copyright: 2018, The Authors
@@ -15,9 +15,33 @@ require_controls 'linux-baseline' do
   control 'os-01'
 end
 
+-------------------------------------------------------------------------------------
 ## Upload to Automate
 
-inspec compliance login https://nyc-wsdf1.chef-demo.com --user=YOUR-USER --token=dy7Odby0wMvDY8AyUdMlIfxqriI=
+inspec compliance login https:// --user=YOUR-USER --token=
 
-inspec compliance upload myco-base-profile
+inspec compliance upload MYCO-base-profile
+
+-------------------------------------------------------------------------------------
+## security_baseline/recipes/default.rb
+
+include_recipe 'os-hardening::default'
+
+-------------------------------------------------------------------------------------
+## security_baseline/metadata.rb
+
+depends 'os-hardening'
+
+-------------------------------------------------------------------------------------
+## config.rb
+
+data_collector.server_url "https://okc-workshop.chef-demo.com/data-collector/v0/"
+data_collector.token '<API_TOKEN_FROM_SPREADSHEET>'
+
+-------------------------------------------------------------------------------------
+## Chef Remediation
+
+sudo chef-client -z -o security_baseline -c ~/chef-repo/config.rb
+
+
 
