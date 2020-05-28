@@ -21,7 +21,7 @@ end
 -------------------------------------------------------------------------------------
 ## Upload to Automate
 
-inspec compliance login https:// --user=YOUR-USER --token=
+inspec compliance login https://driving-compliance-a2.chef-demo.com --user=YOUR-USER --token=9zIJjlhLYfkRRx9YK0xeSndaCXM=
 
 inspec compliance upload MYCO-base-profile
 
@@ -38,8 +38,8 @@ depends 'os-hardening'
 -------------------------------------------------------------------------------------
 ## config.rb
 
-data_collector.server_url "https://okc-workshop.chef-demo.com/data-collector/v0/"
-data_collector.token '<API_TOKEN_FROM_SPREADSHEET>'
+data_collector.server_url "https://driving-compliance-a2.chef-demo.com/data-collector/v0/"
+data_collector.token '9zIJjlhLYfkRRx9YK0xeSndaCXM='
 
 -------------------------------------------------------------------------------------
 ## Chef Remediation
